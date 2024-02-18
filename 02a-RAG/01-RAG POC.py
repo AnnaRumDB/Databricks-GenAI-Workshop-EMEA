@@ -26,7 +26,7 @@
 
 # COMMAND ----------
 
-# MAGIC %pip install -U lxml==4.9.3 langchain==0.0.335 transformers==4.35.1 accelerate==0.24.1 chromadb==0.4.17 
+# MAGIC %pip install -U lxml==4.9.3 langchain==0.0.344 transformers==4.35.1 accelerate==0.24.1 chromadb==0.4.17 
 # MAGIC dbutils.library.restartPython()
 
 # COMMAND ----------
@@ -152,10 +152,8 @@ import pandas as pd
 def parse_and_split(docs: pd.Series) -> pd.Series:
     return docs.apply(split_html_on_h2)
 
-# COMMAND ----------
-
-
 (spark.table(f"{catalog_name}.{schema_name}.databricks_documentation_raw")
+    .filter('text is not null')
     .withColumn('content', explode(parse_and_split('text')))
     .drop("text")
     .write.mode('overwrite').saveAsTable(f"{catalog_name}.{schema_name}.databricks_documentation"))
@@ -216,7 +214,7 @@ else:
 # COMMAND ----------
 
 #if this code returns no result change USE_CACHE=False in the cell above and execute again
-vector_db.similarity_search_with_relevance_scores("why should i use delta live tables", k=2) 
+vector_db.similarity_search_with_relevance_scores("what is DAtabricks liquid clustering?", k=2) 
 
 # COMMAND ----------
 
@@ -229,6 +227,19 @@ vector_db.similarity_search_with_relevance_scores("why should i use delta live t
 # Make sure you reset the GPU to free our gpu memory if you're using multiple notebooks0
 # (load the model only once in 1 single notebook to avoid OOM)
 reset_gpu()
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ## 0/ Querying Foundation LLM model. It doesn't know (yet) what Liquid Clustering is!
+# MAGIC Now we can compose with a language model and prompting strategy to make a `langchain` chain that answers questions.
+
+# COMMAND ----------
+
+# Test Databricks Foundation LLM model
+from langchain.chat_models import ChatDatabricks
+chat_model = ChatDatabricks(endpoint="databricks-mixtral-8x7b-instruct", max_tokens = 200)
+print(f"Test chat model: {chat_model.predict('What is liquid clustering on Databricks?')}")
 
 # COMMAND ----------
 
@@ -264,16 +275,30 @@ Response:
 prompt = PromptTemplate(input_variables=['context', 'question'], template=template_text)
 
 #Building the chain will load MPT-7B-chat and can take several minutes
-qa_chain = build_qa_chain(model_name="mosaicml/mpt-7b-chat", prompt_template=prompt, verbose=False)
+#qa_chain = build_qa_chain(model_name="mosaicml/mpt-7b-chat", prompt_template=prompt, verbose=False)
+
+# COMMAND ----------
+
+from langchain.chains import RetrievalQA
+from langchain.prompts import PromptTemplate
+from langchain.chat_models import ChatDatabricks
+
+chain = RetrievalQA.from_chain_type(
+    llm=chat_model,
+    chain_type="stuff",
+    retriever=vector_db.as_retriever(),
+    chain_type_kwargs={"prompt": prompt}
+)
 
 # COMMAND ----------
 
 # MAGIC %md
 # MAGIC ## 2/ Using the Chain for Simple Question Answering
-# MAGIC That's it! It's ready to go. Try asking a Databricks related question!
+# MAGIC That's it! It's ready to go. Try asking a Databricks related question (including new features like Liquid Clustering)!
 
 # COMMAND ----------
 
-question="why should I use Delta LIve Tables for ETL?"
-result = qa_chain({"input_documents": vector_db.similarity_search(query=question, k=2), "question": question})
-format_and_display_chat_response(question, result)
+# langchain.debug = True #uncomment to see the chain details and the full prompt being sent
+question = {"query": "what is DAtabricks liquid clustering?"}
+answer = chain.run(question)
+print(answer)
