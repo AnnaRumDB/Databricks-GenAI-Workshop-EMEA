@@ -26,7 +26,7 @@
 
 # COMMAND ----------
 
-# MAGIC %pip install -U lxml==4.9.3 langchain==0.0.344 transformers==4.35.1 accelerate==0.24.1 chromadb==0.4.17 
+# MAGIC %pip install -U lxml==4.9.3 langchain==0.0.344 transformers==4.35.1 accelerate==0.24.1 chromadb==0.4.17 huggingface-hub>=0.18.0 prometheus-client
 # MAGIC dbutils.library.restartPython()
 
 # COMMAND ----------
@@ -231,7 +231,7 @@ reset_gpu()
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC ## 0/ Querying Foundation LLM model. It doesn't know (yet) what Liquid Clustering is!
+# MAGIC ## 0/ Querying Foundation LLM model. 
 # MAGIC Now we can compose with a language model and prompting strategy to make a `langchain` chain that answers questions.
 
 # COMMAND ----------
@@ -239,7 +239,7 @@ reset_gpu()
 # Test Databricks Foundation LLM model
 from langchain.chat_models import ChatDatabricks
 chat_model = ChatDatabricks(endpoint="databricks-mixtral-8x7b-instruct", max_tokens = 200)
-print(f"Test chat model: {chat_model.predict('What is liquid clustering on Databricks?')}")
+print(f"Test chat model: {chat_model.predict('what is Databricks Vector Search?')}")
 
 # COMMAND ----------
 
@@ -294,11 +294,18 @@ chain = RetrievalQA.from_chain_type(
 
 # MAGIC %md
 # MAGIC ## 2/ Using the Chain for Simple Question Answering
-# MAGIC That's it! It's ready to go. Try asking a Databricks related question (including new features like Liquid Clustering)!
+# MAGIC That's it! It's ready to go. Try asking a Databricks related question
 
 # COMMAND ----------
 
 # langchain.debug = True #uncomment to see the chain details and the full prompt being sent
-question = {"query": "what is DAtabricks liquid clustering?"}
+question = {"query": "what is Databricks Vector Search?"}
+answer = chain.run(question)
+print(answer)
+
+# COMMAND ----------
+
+# langchain.debug = True #uncomment to see the chain details and the full prompt being sent
+question = {"query": "what is Databricks Liquid Clustering?"}
 answer = chain.run(question)
 print(answer)
