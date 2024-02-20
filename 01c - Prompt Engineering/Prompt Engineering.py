@@ -1,9 +1,15 @@
 # Databricks notebook source
-dbutils.widgets.text("catalog_name","main")
+current_user = spark.sql("SELECT current_user() as username").collect()[0].username
+catalog_name = f'catalog_{current_user.split("@")[0].split(".")[0]}' #potentially change to main or other catalog if used outside of CloudLabs environment
 
 # COMMAND ----------
 
+dbutils.widgets.text("catalog_name",catalog_name)
 
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC CREATE CATALOG IF NOT EXISTS $catalog_name
 
 # COMMAND ----------
 
@@ -321,4 +327,5 @@ mlflow.register_model(
 
 # COMMAND ----------
 
-
+# MAGIC %sql
+# MAGIC DROP CATALOG IF EXISTS $catalog_name CASCADE
