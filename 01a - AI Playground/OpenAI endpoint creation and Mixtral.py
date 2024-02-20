@@ -4,6 +4,33 @@
 
 # COMMAND ----------
 
+# MAGIC %md ##Adding API to use external models in model serving 
+
+# COMMAND ----------
+
+# MAGIC %md More info here https://docs.databricks.com/en/generative-ai/external-models/index.html
+
+# COMMAND ----------
+
+#!Uncomment if you want to add your own OpenAI API key!
+
+#KEY_NAME = "openai_api_key" #Use the key name you prefer
+#SCOPE_NAME = "anyar" #Use the scope name you prefer
+#OPENAI_API_KEY = ""
+
+# COMMAND ----------
+
+#!Uncomment if you want to add your own OpenAI API key!
+
+#import time
+#from databricks.sdk import WorkspaceClient
+#w = WorkspaceClient()
+#w.secrets.create_scope("anyar")
+#w.secrets.put_secret(scope=SCOPE_NAME, key=KEY_NAME, string_value=OPENAI_API_KEY)
+#w.secrets.list_secrets(scope=SCOPE_NAME)
+
+# COMMAND ----------
+
 import mlflow.deployments
 
 client = mlflow.deployments.get_deploy_client("databricks")
@@ -16,12 +43,20 @@ client.create_endpoint(
                 "provider": "openai",
                 "task": "llm/v1/completions",
                 "openai_config": {
-                    "openai_api_key": "{{secrets/anyar/openai_api_key}}"
+                    "openai_api_key": "{{secrets/anyar/openai_api_key}}" #change to your own scope and key names 
                 }
             }
         }]
     }
 )
+
+# COMMAND ----------
+
+# MAGIC %md ##Using Foundation Models API to query Mixtral 8x7b
+
+# COMMAND ----------
+
+# MAGIC %md More info here https://www.databricks.com/blog/build-genai-apps-faster-new-foundation-model-capabilities
 
 # COMMAND ----------
 
