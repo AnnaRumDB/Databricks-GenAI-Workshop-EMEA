@@ -35,6 +35,19 @@ dbutils.library.restartPython()
 
 # COMMAND ----------
 
+# Get catalog name to use for the model from the marketplace
+current_user = spark.sql("SELECT current_user() as username").collect()[0].username
+catalog_name = f'catalog_whisper_{current_user.split("@")[0].split(".")[0]}'
+dbutils.widgets.text("catalog_name",catalog_name)
+
+# COMMAND ----------
+
+# MAGIC %md 
+# MAGIC Now go to Marketplace and find whisper_large_v3 model there. Install model to the catalog with *catalog_name*!
+# MAGIC
+
+# COMMAND ----------
+
 # Select the model from the dropdown list
 model_names = ['whisper_large_v3']
 dbutils.widgets.dropdown("model_name", model_names[0], model_names)
@@ -44,11 +57,10 @@ dbutils.widgets.dropdown("model_name", model_names[0], model_names)
 # Default catalog name when installing the model from Databricks Marketplace.
 # Replace with the name of the catalog containing this model
 # You can also specify a different model version to load for inference
-catalog_name = "databricks_whisper_v3_model_anya"
 version = "1"
 model_name = dbutils.widgets.get("model_name")
 model_uc_path = f"{catalog_name}.models.{model_name}"
-endpoint_name = f'{model_name}_marketplace_anya'
+endpoint_name = f'{model_name}_marketplace_{current_user.split("@")[0].split(".")[0]}'
 
 # COMMAND ----------
 
