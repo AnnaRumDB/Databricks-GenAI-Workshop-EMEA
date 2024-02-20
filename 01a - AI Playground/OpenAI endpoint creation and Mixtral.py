@@ -25,7 +25,7 @@
 #import time
 #from databricks.sdk import WorkspaceClient
 #w = WorkspaceClient()
-#w.secrets.create_scope("anyar")
+#w.secrets.create_scope("myscope")
 #w.secrets.put_secret(scope=SCOPE_NAME, key=KEY_NAME, string_value=OPENAI_API_KEY)
 #w.secrets.list_secrets(scope=SCOPE_NAME)
 
@@ -43,7 +43,7 @@ client.create_endpoint(
                 "provider": "openai",
                 "task": "llm/v1/completions",
                 "openai_config": {
-                    "openai_api_key": "{{secrets/anyar/openai_api_key}}" #change to your own scope and key names 
+                    "openai_api_key": "{{secrets/myscope/openai_api_key}}" #change to your own scope and key names 
                 }
             }
         }]

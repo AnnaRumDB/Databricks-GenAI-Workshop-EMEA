@@ -3,6 +3,10 @@ dbutils.widgets.text("catalog_name","main")
 
 # COMMAND ----------
 
+
+
+# COMMAND ----------
+
 # MAGIC %run ./init/config $catalog_name=$catalog_name
 
 # COMMAND ----------
