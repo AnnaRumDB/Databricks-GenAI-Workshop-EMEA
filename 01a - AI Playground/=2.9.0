@@ -1,0 +1,126 @@
+Collecting mlflow[genai]
+  Downloading mlflow-2.12.1-py3-none-any.whl (20.2 MB)
+[?25l     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/20.2 MB[0m [31m?[0m eta [36m-:--:--[0m[2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.1/20.2 MB[0m [31m4.2 MB/s[0m eta [36m0:00:05[0m[2K     [91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.5/20.2 MB[0m [31m6.9 MB/s[0m eta [36m0:00:03[0m[2K     [91m━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.9/20.2 MB[0m [31m8.6 MB/s[0m eta [36m0:00:03[0m[2K     [91m━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m1.4/20.2 MB[0m [31m10.0 MB/s[0m eta [36m0:00:02[0m[2K     [91m━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m2.0/20.2 MB[0m [31m11.6 MB/s[0m eta [36m0:00:02[0m[2K     [91m━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m2.9/20.2 MB[0m [31m13.5 MB/s[0m eta [36m0:00:02[0m[2K     [91m━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.9/20.2 MB[0m [31m15.7 MB/s[0m eta [36m0:00:02[0m[2K     [91m━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m5.3/20.2 MB[0m [31m18.4 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m6.8/20.2 MB[0m [31m21.3 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━[0m [32m8.9/20.2 MB[0m [31m25.0 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━[0m [32m11.7/20.2 MB[0m [31m40.9 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━[0m [32m15.3/20.2 MB[0m [31m68.1 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━[0m [32m18.5/20.2 MB[0m [31m85.6 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m20.2/20.2 MB[0m [31m92.4 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m20.2/20.2 MB[0m [31m92.4 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m20.2/20.2 MB[0m [31m92.4 MB/s[0m eta [36m0:00:01[0m[2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m20.2/20.2 MB[0m [31m42.6 MB/s[0m eta [36m0:00:00[0m
+[?25hRequirement already satisfied: markdown<4,>=3.3 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (3.4.1)
+Requirement already satisfied: matplotlib<4 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (3.7.2)
+Requirement already satisfied: scipy<2 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (1.11.1)
+Requirement already satisfied: sqlalchemy<3,>=1.4.0 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (1.4.39)
+Requirement already satisfied: gitpython<4,>=3.1.9 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (3.1.27)
+Requirement already satisfied: sqlparse<1,>=0.4.0 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (0.4.2)
+Collecting graphene<4
+  Downloading graphene-3.3-py2.py3-none-any.whl (128 kB)
+[?25l     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/128.2 kB[0m [31m?[0m eta [36m-:--:--[0m[2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m128.2/128.2 kB[0m [31m14.9 MB/s[0m eta [36m0:00:00[0m
+[?25hCollecting docker<8,>=4.0.0
+  Downloading docker-7.0.0-py3-none-any.whl (147 kB)
+[?25l     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/147.6 kB[0m [31m?[0m eta [36m-:--:--[0m[2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m147.6/147.6 kB[0m [31m17.7 MB/s[0m eta [36m0:00:00[0m
+[?25hRequirement already satisfied: pyyaml<7,>=5.1 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (6.0)
+Requirement already satisfied: pytz<2025 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (2022.7)
+Requirement already satisfied: pyarrow<16,>=4.0.0 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (14.0.1)
+Requirement already satisfied: scikit-learn<2 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (1.3.0)
+Requirement already satisfied: numpy<2 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (1.23.5)
+Requirement already satisfied: gunicorn<22 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (20.1.0)
+Requirement already satisfied: pandas<3 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (2.0.3)
+Requirement already satisfied: importlib-metadata!=4.7.0,<8,>=3.7.0 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (6.0.0)
+Requirement already satisfied: click<9,>=7.0 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (8.0.4)
+Requirement already satisfied: Flask<4 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (2.2.5)
+Requirement already satisfied: entrypoints<1 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (0.4)
+Requirement already satisfied: cloudpickle<4 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (2.2.1)
+Requirement already satisfied: requests<3,>=2.17.3 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (2.31.0)
+Collecting querystring-parser<2
+  Downloading querystring_parser-1.2.4-py2.py3-none-any.whl (7.9 kB)
+Requirement already satisfied: Jinja2<4,>=2.11 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (3.1.2)
+Collecting alembic!=1.10.0,<2
+  Downloading alembic-1.13.1-py3-none-any.whl (233 kB)
+[?25l     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/233.4 kB[0m [31m?[0m eta [36m-:--:--[0m[2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m233.4/233.4 kB[0m [31m20.8 MB/s[0m eta [36m0:00:00[0m
+[?25hRequirement already satisfied: packaging<25 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (23.2)
+Requirement already satisfied: protobuf<6,>=3.12.0 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (4.24.1)
+Collecting uvicorn[standard]<1
+  Downloading uvicorn-0.29.0-py3-none-any.whl (60 kB)
+[?25l     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/60.8 kB[0m [31m?[0m eta [36m-:--:--[0m[2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m60.8/60.8 kB[0m [31m9.5 MB/s[0m eta [36m0:00:00[0m
+[?25hCollecting slowapi<1,>=0.1.9
+  Downloading slowapi-0.1.9-py3-none-any.whl (14 kB)
+Collecting watchfiles<1
+  Downloading watchfiles-0.21.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.3 MB)
+[?25l     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/1.3 MB[0m [31m?[0m eta [36m-:--:--[0m[2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m1.3/1.3 MB[0m [31m56.4 MB/s[0m eta [36m0:00:00[0m
+[?25hRequirement already satisfied: tiktoken<1 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (0.5.2)
+Requirement already satisfied: pydantic<3,>=1.0 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (1.10.6)
+Requirement already satisfied: aiohttp<4 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (3.8.5)
+Collecting fastapi<1
+  Downloading fastapi-0.110.2-py3-none-any.whl (91 kB)
+[?25l     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/91.9 kB[0m [31m?[0m eta [36m-:--:--[0m[2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m91.9/91.9 kB[0m [31m13.1 MB/s[0m eta [36m0:00:00[0m
+[?25hRequirement already satisfied: boto3<2,>=1.28.56 in /databricks/python3/lib/python3.11/site-packages (from mlflow[genai]) (1.34.39)
+Requirement already satisfied: multidict<7.0,>=4.5 in /databricks/python3/lib/python3.11/site-packages (from aiohttp<4->mlflow[genai]) (6.0.2)
+Requirement already satisfied: frozenlist>=1.1.1 in /databricks/python3/lib/python3.11/site-packages (from aiohttp<4->mlflow[genai]) (1.3.3)
+Requirement already satisfied: async-timeout<5.0,>=4.0.0a3 in /databricks/python3/lib/python3.11/site-packages (from aiohttp<4->mlflow[genai]) (4.0.2)
+Requirement already satisfied: yarl<2.0,>=1.0 in /databricks/python3/lib/python3.11/site-packages (from aiohttp<4->mlflow[genai]) (1.8.1)
+Requirement already satisfied: attrs>=17.3.0 in /databricks/python3/lib/python3.11/site-packages (from aiohttp<4->mlflow[genai]) (22.1.0)
+Requirement already satisfied: aiosignal>=1.1.2 in /databricks/python3/lib/python3.11/site-packages (from aiohttp<4->mlflow[genai]) (1.2.0)
+Requirement already satisfied: charset-normalizer<4.0,>=2.0 in /databricks/python3/lib/python3.11/site-packages (from aiohttp<4->mlflow[genai]) (2.0.4)
+Requirement already satisfied: Mako in /databricks/python3/lib/python3.11/site-packages (from alembic!=1.10.0,<2->mlflow[genai]) (1.2.0)
+Requirement already satisfied: typing-extensions>=4 in /databricks/python3/lib/python3.11/site-packages (from alembic!=1.10.0,<2->mlflow[genai]) (4.7.1)
+Requirement already satisfied: jmespath<2.0.0,>=0.7.1 in /databricks/python3/lib/python3.11/site-packages (from boto3<2,>=1.28.56->mlflow[genai]) (0.10.0)
+Requirement already satisfied: botocore<1.35.0,>=1.34.39 in /databricks/python3/lib/python3.11/site-packages (from boto3<2,>=1.28.56->mlflow[genai]) (1.34.39)
+Requirement already satisfied: s3transfer<0.11.0,>=0.10.0 in /databricks/python3/lib/python3.11/site-packages (from boto3<2,>=1.28.56->mlflow[genai]) (0.10.0)
+Requirement already satisfied: urllib3>=1.26.0 in /databricks/python3/lib/python3.11/site-packages (from docker<8,>=4.0.0->mlflow[genai]) (1.26.16)
+Collecting starlette<0.38.0,>=0.37.2
+  Downloading starlette-0.37.2-py3-none-any.whl (71 kB)
+[?25l     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/71.9 kB[0m [31m?[0m eta [36m-:--:--[0m[2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m71.9/71.9 kB[0m [31m12.5 MB/s[0m eta [36m0:00:00[0m
+[?25hCollecting typing-extensions>=4
+  Downloading typing_extensions-4.11.0-py3-none-any.whl (34 kB)
+Requirement already satisfied: Werkzeug>=2.2.2 in /databricks/python3/lib/python3.11/site-packages (from Flask<4->mlflow[genai]) (2.2.3)
+Requirement already satisfied: itsdangerous>=2.0 in /databricks/python3/lib/python3.11/site-packages (from Flask<4->mlflow[genai]) (2.0.1)
+Requirement already satisfied: gitdb<5,>=4.0.1 in /databricks/python3/lib/python3.11/site-packages (from gitpython<4,>=3.1.9->mlflow[genai]) (4.0.11)
+Collecting graphql-relay<3.3,>=3.1
+  Downloading graphql_relay-3.2.0-py3-none-any.whl (16 kB)
+Collecting graphql-core<3.3,>=3.1
+  Downloading graphql_core-3.2.3-py3-none-any.whl (202 kB)
+[?25l     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/202.9 kB[0m [31m?[0m eta [36m-:--:--[0m[2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m202.9/202.9 kB[0m [31m26.3 MB/s[0m eta [36m0:00:00[0m
+[?25hCollecting aniso8601<10,>=8
+  Downloading aniso8601-9.0.1-py2.py3-none-any.whl (52 kB)
+[?25l     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/52.8 kB[0m [31m?[0m eta [36m-:--:--[0m[2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m52.8/52.8 kB[0m [31m8.6 MB/s[0m eta [36m0:00:00[0m
+[?25hRequirement already satisfied: setuptools>=3.0 in /databricks/python3/lib/python3.11/site-packages (from gunicorn<22->mlflow[genai]) (68.0.0)
+Requirement already satisfied: zipp>=0.5 in /databricks/python3/lib/python3.11/site-packages (from importlib-metadata!=4.7.0,<8,>=3.7.0->mlflow[genai]) (3.11.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /databricks/python3/lib/python3.11/site-packages (from Jinja2<4,>=2.11->mlflow[genai]) (2.1.1)
+Requirement already satisfied: cycler>=0.10 in /databricks/python3/lib/python3.11/site-packages (from matplotlib<4->mlflow[genai]) (0.11.0)
+Requirement already satisfied: pyparsing<3.1,>=2.3.1 in /databricks/python3/lib/python3.11/site-packages (from matplotlib<4->mlflow[genai]) (3.0.9)
+Requirement already satisfied: kiwisolver>=1.0.1 in /databricks/python3/lib/python3.11/site-packages (from matplotlib<4->mlflow[genai]) (1.4.4)
+Requirement already satisfied: contourpy>=1.0.1 in /databricks/python3/lib/python3.11/site-packages (from matplotlib<4->mlflow[genai]) (1.0.5)
+Requirement already satisfied: python-dateutil>=2.7 in /databricks/python3/lib/python3.11/site-packages (from matplotlib<4->mlflow[genai]) (2.8.2)
+Requirement already satisfied: pillow>=6.2.0 in /databricks/python3/lib/python3.11/site-packages (from matplotlib<4->mlflow[genai]) (9.4.0)
+Requirement already satisfied: fonttools>=4.22.0 in /databricks/python3/lib/python3.11/site-packages (from matplotlib<4->mlflow[genai]) (4.25.0)
+Requirement already satisfied: tzdata>=2022.1 in /databricks/python3/lib/python3.11/site-packages (from pandas<3->mlflow[genai]) (2022.1)
+Requirement already satisfied: six in /usr/lib/python3/dist-packages (from querystring-parser<2->mlflow[genai]) (1.16.0)
+Requirement already satisfied: idna<4,>=2.5 in /databricks/python3/lib/python3.11/site-packages (from requests<3,>=2.17.3->mlflow[genai]) (3.4)
+Requirement already satisfied: certifi>=2017.4.17 in /databricks/python3/lib/python3.11/site-packages (from requests<3,>=2.17.3->mlflow[genai]) (2023.7.22)
+Requirement already satisfied: joblib>=1.1.1 in /databricks/python3/lib/python3.11/site-packages (from scikit-learn<2->mlflow[genai]) (1.2.0)
+Requirement already satisfied: threadpoolctl>=2.0.0 in /databricks/python3/lib/python3.11/site-packages (from scikit-learn<2->mlflow[genai]) (2.2.0)
+Collecting limits>=2.3
+  Downloading limits-3.11.0-py3-none-any.whl (45 kB)
+[?25l     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/45.2 kB[0m [31m?[0m eta [36m-:--:--[0m[2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m45.2/45.2 kB[0m [31m6.0 MB/s[0m eta [36m0:00:00[0m
+[?25hRequirement already satisfied: greenlet!=0.4.17 in /databricks/python3/lib/python3.11/site-packages (from sqlalchemy<3,>=1.4.0->mlflow[genai]) (2.0.1)
+Requirement already satisfied: regex>=2022.1.18 in /databricks/python3/lib/python3.11/site-packages (from tiktoken<1->mlflow[genai]) (2022.7.9)
+Requirement already satisfied: h11>=0.8 in /databricks/python3/lib/python3.11/site-packages (from uvicorn[standard]<1->mlflow[genai]) (0.14.0)
+Collecting websockets>=10.4
+  Downloading websockets-12.0-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (130 kB)
+[?25l     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/130.9 kB[0m [31m?[0m eta [36m-:--:--[0m[2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m130.9/130.9 kB[0m [31m18.5 MB/s[0m eta [36m0:00:00[0m
+[?25hCollecting python-dotenv>=0.13
+  Downloading python_dotenv-1.0.1-py3-none-any.whl (19 kB)
+Collecting httptools>=0.5.0
+  Downloading httptools-0.6.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (318 kB)
+[?25l     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/318.5 kB[0m [31m?[0m eta [36m-:--:--[0m[2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m318.5/318.5 kB[0m [31m31.9 MB/s[0m eta [36m0:00:00[0m
+[?25hCollecting uvloop!=0.15.0,!=0.15.1,>=0.14.0
+  Downloading uvloop-0.19.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.5 MB)
+[?25l     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/3.5 MB[0m [31m?[0m eta [36m-:--:--[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m3.5/3.5 MB[0m [31m140.2 MB/s[0m eta [36m0:00:01[0m[2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.5/3.5 MB[0m [31m75.5 MB/s[0m eta [36m0:00:00[0m
+[?25hRequirement already satisfied: anyio>=3.0.0 in /databricks/python3/lib/python3.11/site-packages (from watchfiles<1->mlflow[genai]) (3.5.0)
+Requirement already satisfied: sniffio>=1.1 in /databricks/python3/lib/python3.11/site-packages (from anyio>=3.0.0->watchfiles<1->mlflow[genai]) (1.2.0)
+Requirement already satisfied: smmap<6,>=3.0.1 in /databricks/python3/lib/python3.11/site-packages (from gitdb<5,>=4.0.1->gitpython<4,>=3.1.9->mlflow[genai]) (5.0.0)
+Collecting deprecated>=1.2
+  Downloading Deprecated-1.2.14-py2.py3-none-any.whl (9.6 kB)
+Requirement already satisfied: importlib-resources>=1.3 in /databricks/python3/lib/python3.11/site-packages (from limits>=2.3->slowapi<1,>=0.1.9->mlflow[genai]) (6.1.3)
+Requirement already satisfied: wrapt<2,>=1.10 in /databricks/python3/lib/python3.11/site-packages (from deprecated>=1.2->limits>=2.3->slowapi<1,>=0.1.9->mlflow[genai]) (1.14.1)
+Installing collected packages: aniso8601, websockets, uvloop, uvicorn, typing-extensions, querystring-parser, python-dotenv, httptools, graphql-core, deprecated, watchfiles, starlette, limits, graphql-relay, docker, alembic, slowapi, graphene, fastapi, mlflow
+  Attempting uninstall: typing-extensions
+    Found existing installation: typing_extensions 4.7.1
+    Not uninstalling typing-extensions at /databricks/python3/lib/python3.11/site-packages, outside environment /local_disk0/.ephemeral_nfs/envs/pythonEnv-d2c61693-b88d-47ca-b0ce-19d1c06168cb
+    Can't uninstall 'typing_extensions'. No files were found to uninstall.
+Successfully installed alembic-1.13.1 aniso8601-9.0.1 deprecated-1.2.14 docker-7.0.0 fastapi-0.110.2 graphene-3.3 graphql-core-3.2.3 graphql-relay-3.2.0 httptools-0.6.1 limits-3.11.0 mlflow-2.12.1 python-dotenv-1.0.1 querystring-parser-1.2.4 slowapi-0.1.9 starlette-0.37.2 typing-extensions-4.11.0 uvicorn-0.29.0 uvloop-0.19.0 watchfiles-0.21.0 websockets-12.0

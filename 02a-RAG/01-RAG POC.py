@@ -63,6 +63,11 @@
 
 # COMMAND ----------
 
+# MAGIC %sql
+# MAGIC CREATE SCHEMA IF NOT EXISTS main.genai_workshop_anna;
+
+# COMMAND ----------
+
 setup_datasets(dataset_type=DatasetType.DATABRICKS, reset=False)
 
 # COMMAND ----------
@@ -300,12 +305,5 @@ chain = RetrievalQA.from_chain_type(
 
 # langchain.debug = True #uncomment to see the chain details and the full prompt being sent
 question = {"query": "what is Databricks Vector Search?"}
-answer = chain.run(question)
-print(answer)
-
-# COMMAND ----------
-
-# langchain.debug = True #uncomment to see the chain details and the full prompt being sent
-question = {"query": "what is Databricks Liquid Clustering?"}
 answer = chain.run(question)
 print(answer)

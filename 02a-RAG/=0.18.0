@@ -1,103 +1,285 @@
-Requirement already satisfied: lxml==4.9.3 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (4.9.3)
-Requirement already satisfied: langchain==0.0.344 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (0.0.344)
-Requirement already satisfied: transformers==4.35.1 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (4.35.1)
-Requirement already satisfied: accelerate==0.24.1 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (0.24.1)
-Requirement already satisfied: chromadb==0.4.17 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (0.4.17)
-Requirement already satisfied: huggingface-hub in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (0.17.3)
+Collecting lxml==4.9.3
+  Downloading lxml-4.9.3-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+Collecting langchain==0.0.344
+  Downloading langchain-0.0.344-py3-none-any.whl.metadata (16 kB)
+Collecting transformers==4.35.1
+  Downloading transformers-4.35.1-py3-none-any.whl.metadata (123 kB)
+[?25l     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/123.1 kB[0m [31m?[0m eta [36m-:--:--[0m[2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m123.1/123.1 kB[0m [31m4.5 MB/s[0m eta [36m0:00:00[0m
+[?25hCollecting accelerate==0.24.1
+  Downloading accelerate-0.24.1-py3-none-any.whl.metadata (18 kB)
+Collecting chromadb==0.4.17
+  Downloading chromadb-0.4.17-py3-none-any.whl.metadata (7.3 kB)
+Requirement already satisfied: huggingface-hub in /databricks/python3/lib/python3.11/site-packages (0.20.2)
 Collecting huggingface-hub
-  Using cached huggingface_hub-0.20.3-py3-none-any.whl (330 kB)
-Requirement already satisfied: prometheus-client in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (0.20.0)
-Requirement already satisfied: aiohttp<4.0.0,>=3.8.3 in /databricks/python3/lib/python3.10/site-packages (from langchain==0.0.344) (3.9.1)
-Requirement already satisfied: SQLAlchemy<3,>=1.4 in /databricks/python3/lib/python3.10/site-packages (from langchain==0.0.344) (1.4.39)
-Requirement already satisfied: PyYAML>=5.3 in /databricks/python3/lib/python3.10/site-packages (from langchain==0.0.344) (6.0)
-Requirement already satisfied: jsonpatch<2.0,>=1.33 in /databricks/python3/lib/python3.10/site-packages (from langchain==0.0.344) (1.33)
-Requirement already satisfied: langsmith<0.1.0,>=0.0.63 in /databricks/python3/lib/python3.10/site-packages (from langchain==0.0.344) (0.0.79)
-Requirement already satisfied: numpy<2,>=1 in /databricks/python3/lib/python3.10/site-packages (from langchain==0.0.344) (1.23.5)
-Requirement already satisfied: dataclasses-json<0.7,>=0.5.7 in /databricks/python3/lib/python3.10/site-packages (from langchain==0.0.344) (0.6.3)
-Requirement already satisfied: async-timeout<5.0.0,>=4.0.0 in /databricks/python3/lib/python3.10/site-packages (from langchain==0.0.344) (4.0.3)
-Requirement already satisfied: tenacity<9.0.0,>=8.1.0 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from langchain==0.0.344) (8.2.3)
-Requirement already satisfied: pydantic<3,>=1 in /databricks/python3/lib/python3.10/site-packages (from langchain==0.0.344) (1.10.6)
-Requirement already satisfied: langchain-core<0.1,>=0.0.8 in /databricks/python3/lib/python3.10/site-packages (from langchain==0.0.344) (0.0.13)
-Requirement already satisfied: requests<3,>=2 in /databricks/python3/lib/python3.10/site-packages (from langchain==0.0.344) (2.28.1)
-Requirement already satisfied: anyio<4.0 in /databricks/python3/lib/python3.10/site-packages (from langchain==0.0.344) (3.5.0)
-Requirement already satisfied: tokenizers<0.15,>=0.14 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from transformers==4.35.1) (0.14.1)
-Requirement already satisfied: filelock in /databricks/python3/lib/python3.10/site-packages (from transformers==4.35.1) (3.9.0)
-Requirement already satisfied: safetensors>=0.3.1 in /databricks/python3/lib/python3.10/site-packages (from transformers==4.35.1) (0.4.1)
-Requirement already satisfied: tqdm>=4.27 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from transformers==4.35.1) (4.66.2)
-Requirement already satisfied: packaging>=20.0 in /databricks/python3/lib/python3.10/site-packages (from transformers==4.35.1) (23.2)
-Requirement already satisfied: regex!=2019.12.17 in /databricks/python3/lib/python3.10/site-packages (from transformers==4.35.1) (2022.7.9)
-Requirement already satisfied: psutil in /databricks/python3/lib/python3.10/site-packages (from accelerate==0.24.1) (5.9.0)
-Requirement already satisfied: torch>=1.10.0 in /databricks/python3/lib/python3.10/site-packages (from accelerate==0.24.1) (2.0.1+cu118)
-Requirement already satisfied: typer>=0.9.0 in /databricks/python3/lib/python3.10/site-packages (from chromadb==0.4.17) (0.9.0)
-Requirement already satisfied: onnxruntime>=1.14.1 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from chromadb==0.4.17) (1.17.0)
-Requirement already satisfied: chroma-hnswlib==0.7.3 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from chromadb==0.4.17) (0.7.3)
-Requirement already satisfied: typing-extensions>=4.5.0 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from chromadb==0.4.17) (4.9.0)
-Requirement already satisfied: uvicorn[standard]>=0.18.3 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from chromadb==0.4.17) (0.27.1)
-Requirement already satisfied: grpcio>=1.58.0 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from chromadb==0.4.17) (1.60.1)
-Requirement already satisfied: kubernetes>=28.1.0 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from chromadb==0.4.17) (29.0.0)
-Requirement already satisfied: bcrypt>=4.0.1 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from chromadb==0.4.17) (4.1.2)
-Requirement already satisfied: opentelemetry-api>=1.2.0 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from chromadb==0.4.17) (1.22.0)
-Requirement already satisfied: posthog>=2.4.0 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from chromadb==0.4.17) (3.4.1)
-Requirement already satisfied: importlib-resources in /databricks/python3/lib/python3.10/site-packages (from chromadb==0.4.17) (6.1.1)
-Requirement already satisfied: overrides>=7.3.1 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from chromadb==0.4.17) (7.7.0)
-Requirement already satisfied: opentelemetry-exporter-otlp-proto-grpc>=1.2.0 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from chromadb==0.4.17) (1.22.0)
-Requirement already satisfied: pulsar-client>=3.1.0 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from chromadb==0.4.17) (3.4.0)
-Requirement already satisfied: pypika>=0.48.9 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from chromadb==0.4.17) (0.48.9)
-Requirement already satisfied: opentelemetry-sdk>=1.2.0 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from chromadb==0.4.17) (1.22.0)
-Requirement already satisfied: fastapi>=0.95.2 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from chromadb==0.4.17) (0.109.2)
-Requirement already satisfied: fsspec>=2023.5.0 in /databricks/python3/lib/python3.10/site-packages (from huggingface-hub) (2023.6.0)
-Requirement already satisfied: attrs>=17.3.0 in /databricks/python3/lib/python3.10/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain==0.0.344) (22.1.0)
-Requirement already satisfied: yarl<2.0,>=1.0 in /databricks/python3/lib/python3.10/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain==0.0.344) (1.9.4)
-Requirement already satisfied: frozenlist>=1.1.1 in /databricks/python3/lib/python3.10/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain==0.0.344) (1.4.1)
-Requirement already satisfied: multidict<7.0,>=4.5 in /databricks/python3/lib/python3.10/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain==0.0.344) (6.0.4)
-Requirement already satisfied: aiosignal>=1.1.2 in /databricks/python3/lib/python3.10/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain==0.0.344) (1.3.1)
-Requirement already satisfied: sniffio>=1.1 in /databricks/python3/lib/python3.10/site-packages (from anyio<4.0->langchain==0.0.344) (1.2.0)
-Requirement already satisfied: idna>=2.8 in /databricks/python3/lib/python3.10/site-packages (from anyio<4.0->langchain==0.0.344) (3.4)
-Requirement already satisfied: typing-inspect<1,>=0.4.0 in /databricks/python3/lib/python3.10/site-packages (from dataclasses-json<0.7,>=0.5.7->langchain==0.0.344) (0.9.0)
-Requirement already satisfied: marshmallow<4.0.0,>=3.18.0 in /databricks/python3/lib/python3.10/site-packages (from dataclasses-json<0.7,>=0.5.7->langchain==0.0.344) (3.20.2)
-Requirement already satisfied: starlette<0.37.0,>=0.36.3 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from fastapi>=0.95.2->chromadb==0.4.17) (0.36.3)
-Requirement already satisfied: jsonpointer>=1.9 in /databricks/python3/lib/python3.10/site-packages (from jsonpatch<2.0,>=1.33->langchain==0.0.344) (2.4)
-Requirement already satisfied: urllib3>=1.24.2 in /databricks/python3/lib/python3.10/site-packages (from kubernetes>=28.1.0->chromadb==0.4.17) (1.26.14)
-Requirement already satisfied: certifi>=14.05.14 in /databricks/python3/lib/python3.10/site-packages (from kubernetes>=28.1.0->chromadb==0.4.17) (2022.12.7)
+  Downloading huggingface_hub-0.22.2-py3-none-any.whl.metadata (12 kB)
+Requirement already satisfied: prometheus-client in /databricks/python3/lib/python3.11/site-packages (0.14.1)
+Collecting prometheus-client
+  Downloading prometheus_client-0.20.0-py3-none-any.whl.metadata (1.8 kB)
+Requirement already satisfied: PyYAML>=5.3 in /databricks/python3/lib/python3.11/site-packages (from langchain==0.0.344) (6.0)
+Requirement already satisfied: SQLAlchemy<3,>=1.4 in /databricks/python3/lib/python3.11/site-packages (from langchain==0.0.344) (1.4.39)
+Requirement already satisfied: aiohttp<4.0.0,>=3.8.3 in /databricks/python3/lib/python3.11/site-packages (from langchain==0.0.344) (3.8.5)
+Requirement already satisfied: anyio<4.0 in /databricks/python3/lib/python3.11/site-packages (from langchain==0.0.344) (3.5.0)
+Requirement already satisfied: dataclasses-json<0.7,>=0.5.7 in /databricks/python3/lib/python3.11/site-packages (from langchain==0.0.344) (0.6.4)
+Requirement already satisfied: jsonpatch<2.0,>=1.33 in /databricks/python3/lib/python3.11/site-packages (from langchain==0.0.344) (1.33)
+Collecting langchain-core<0.1,>=0.0.8 (from langchain==0.0.344)
+  Downloading langchain_core-0.0.13-py3-none-any.whl.metadata (978 bytes)
+Requirement already satisfied: langsmith<0.1.0,>=0.0.63 in /databricks/python3/lib/python3.11/site-packages (from langchain==0.0.344) (0.0.87)
+Requirement already satisfied: numpy<2,>=1 in /databricks/python3/lib/python3.11/site-packages (from langchain==0.0.344) (1.23.5)
+Requirement already satisfied: pydantic<3,>=1 in /databricks/python3/lib/python3.11/site-packages (from langchain==0.0.344) (1.10.6)
+Requirement already satisfied: requests<3,>=2 in /databricks/python3/lib/python3.11/site-packages (from langchain==0.0.344) (2.31.0)
+Requirement already satisfied: tenacity<9.0.0,>=8.1.0 in /databricks/python3/lib/python3.11/site-packages (from langchain==0.0.344) (8.2.2)
+Requirement already satisfied: filelock in /databricks/python3/lib/python3.11/site-packages (from transformers==4.35.1) (3.9.0)
+Requirement already satisfied: packaging>=20.0 in /databricks/python3/lib/python3.11/site-packages (from transformers==4.35.1) (23.2)
+Requirement already satisfied: regex!=2019.12.17 in /databricks/python3/lib/python3.11/site-packages (from transformers==4.35.1) (2022.7.9)
+Collecting tokenizers<0.15,>=0.14 (from transformers==4.35.1)
+  Downloading tokenizers-0.14.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.7 kB)
+Requirement already satisfied: safetensors>=0.3.1 in /databricks/python3/lib/python3.11/site-packages (from transformers==4.35.1) (0.3.2)
+Requirement already satisfied: tqdm>=4.27 in /databricks/python3/lib/python3.11/site-packages (from transformers==4.35.1) (4.65.0)
+Requirement already satisfied: psutil in /databricks/python3/lib/python3.11/site-packages (from accelerate==0.24.1) (5.9.0)
+Requirement already satisfied: torch>=1.10.0 in /databricks/python3/lib/python3.11/site-packages (from accelerate==0.24.1) (2.1.2+cu121)
+Collecting chroma-hnswlib==0.7.3 (from chromadb==0.4.17)
+  Downloading chroma_hnswlib-0.7.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (252 bytes)
+Collecting fastapi>=0.95.2 (from chromadb==0.4.17)
+  Downloading fastapi-0.110.2-py3-none-any.whl.metadata (24 kB)
+Collecting uvicorn>=0.18.3 (from uvicorn[standard]>=0.18.3->chromadb==0.4.17)
+  Downloading uvicorn-0.29.0-py3-none-any.whl.metadata (6.3 kB)
+Collecting posthog>=2.4.0 (from chromadb==0.4.17)
+  Downloading posthog-3.5.0-py2.py3-none-any.whl.metadata (2.0 kB)
+Requirement already satisfied: typing-extensions>=4.5.0 in /databricks/python3/lib/python3.11/site-packages (from chromadb==0.4.17) (4.7.1)
+Collecting pulsar-client>=3.1.0 (from chromadb==0.4.17)
+  Downloading pulsar_client-3.5.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.0 kB)
+Collecting onnxruntime>=1.14.1 (from chromadb==0.4.17)
+  Downloading onnxruntime-1.17.3-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (4.4 kB)
+Collecting opentelemetry-api>=1.2.0 (from chromadb==0.4.17)
+  Downloading opentelemetry_api-1.24.0-py3-none-any.whl.metadata (1.3 kB)
+Collecting opentelemetry-exporter-otlp-proto-grpc>=1.2.0 (from chromadb==0.4.17)
+  Downloading opentelemetry_exporter_otlp_proto_grpc-1.24.0-py3-none-any.whl.metadata (2.2 kB)
+Collecting opentelemetry-sdk>=1.2.0 (from chromadb==0.4.17)
+  Downloading opentelemetry_sdk-1.24.0-py3-none-any.whl.metadata (1.4 kB)
+Collecting pypika>=0.48.9 (from chromadb==0.4.17)
+  Downloading PyPika-0.48.9.tar.gz (67 kB)
+[?25l     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/67.3 kB[0m [31m?[0m eta [36m-:--:--[0m[2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m67.3/67.3 kB[0m [31m9.3 MB/s[0m eta [36m0:00:00[0m
+[?25h  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Installing backend dependencies: started
+  Installing backend dependencies: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting overrides>=7.3.1 (from chromadb==0.4.17)
+  Downloading overrides-7.7.0-py3-none-any.whl.metadata (5.8 kB)
+Requirement already satisfied: importlib-resources in /databricks/python3/lib/python3.11/site-packages (from chromadb==0.4.17) (6.3.1)
+Requirement already satisfied: grpcio>=1.58.0 in /databricks/python3/lib/python3.11/site-packages (from chromadb==0.4.17) (1.60.0)
+Collecting bcrypt>=4.0.1 (from chromadb==0.4.17)
+  Downloading bcrypt-4.1.2-cp39-abi3-manylinux_2_28_x86_64.whl.metadata (9.5 kB)
+Requirement already satisfied: typer>=0.9.0 in /databricks/python3/lib/python3.11/site-packages (from chromadb==0.4.17) (0.9.0)
+Collecting kubernetes>=28.1.0 (from chromadb==0.4.17)
+  Downloading kubernetes-29.0.0-py2.py3-none-any.whl.metadata (1.5 kB)
+Collecting tenacity<9.0.0,>=8.1.0 (from langchain==0.0.344)
+  Downloading tenacity-8.2.3-py3-none-any.whl.metadata (1.0 kB)
+Requirement already satisfied: fsspec>=2023.5.0 in /databricks/python3/lib/python3.11/site-packages (from huggingface-hub) (2023.5.0)
+Requirement already satisfied: attrs>=17.3.0 in /databricks/python3/lib/python3.11/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain==0.0.344) (22.1.0)
+Requirement already satisfied: charset-normalizer<4.0,>=2.0 in /databricks/python3/lib/python3.11/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain==0.0.344) (2.0.4)
+Requirement already satisfied: multidict<7.0,>=4.5 in /databricks/python3/lib/python3.11/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain==0.0.344) (6.0.2)
+Requirement already satisfied: async-timeout<5.0,>=4.0.0a3 in /databricks/python3/lib/python3.11/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain==0.0.344) (4.0.2)
+Requirement already satisfied: yarl<2.0,>=1.0 in /databricks/python3/lib/python3.11/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain==0.0.344) (1.8.1)
+Requirement already satisfied: frozenlist>=1.1.1 in /databricks/python3/lib/python3.11/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain==0.0.344) (1.3.3)
+Requirement already satisfied: aiosignal>=1.1.2 in /databricks/python3/lib/python3.11/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain==0.0.344) (1.2.0)
+Requirement already satisfied: idna>=2.8 in /databricks/python3/lib/python3.11/site-packages (from anyio<4.0->langchain==0.0.344) (3.4)
+Requirement already satisfied: sniffio>=1.1 in /databricks/python3/lib/python3.11/site-packages (from anyio<4.0->langchain==0.0.344) (1.2.0)
+Requirement already satisfied: marshmallow<4.0.0,>=3.18.0 in /databricks/python3/lib/python3.11/site-packages (from dataclasses-json<0.7,>=0.5.7->langchain==0.0.344) (3.21.1)
+Requirement already satisfied: typing-inspect<1,>=0.4.0 in /databricks/python3/lib/python3.11/site-packages (from dataclasses-json<0.7,>=0.5.7->langchain==0.0.344) (0.9.0)
+Collecting starlette<0.38.0,>=0.37.2 (from fastapi>=0.95.2->chromadb==0.4.17)
+  Downloading starlette-0.37.2-py3-none-any.whl.metadata (5.9 kB)
+Collecting typing-extensions>=4.5.0 (from chromadb==0.4.17)
+  Downloading typing_extensions-4.11.0-py3-none-any.whl.metadata (3.0 kB)
+Requirement already satisfied: jsonpointer>=1.9 in /databricks/python3/lib/python3.11/site-packages (from jsonpatch<2.0,>=1.33->langchain==0.0.344) (2.4)
+Requirement already satisfied: certifi>=14.05.14 in /databricks/python3/lib/python3.11/site-packages (from kubernetes>=28.1.0->chromadb==0.4.17) (2023.7.22)
 Requirement already satisfied: six>=1.9.0 in /usr/lib/python3/dist-packages (from kubernetes>=28.1.0->chromadb==0.4.17) (1.16.0)
-Requirement already satisfied: python-dateutil>=2.5.3 in /databricks/python3/lib/python3.10/site-packages (from kubernetes>=28.1.0->chromadb==0.4.17) (2.8.2)
-Requirement already satisfied: oauthlib>=3.2.2 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from kubernetes>=28.1.0->chromadb==0.4.17) (3.2.2)
-Requirement already satisfied: google-auth>=1.0.1 in /databricks/python3/lib/python3.10/site-packages (from kubernetes>=28.1.0->chromadb==0.4.17) (2.21.0)
-Requirement already satisfied: requests-oauthlib in /databricks/python3/lib/python3.10/site-packages (from kubernetes>=28.1.0->chromadb==0.4.17) (1.3.1)
-Requirement already satisfied: websocket-client!=0.40.0,!=0.41.*,!=0.42.*,>=0.32.0 in /databricks/python3/lib/python3.10/site-packages (from kubernetes>=28.1.0->chromadb==0.4.17) (0.58.0)
-Requirement already satisfied: flatbuffers in /databricks/python3/lib/python3.10/site-packages (from onnxruntime>=1.14.1->chromadb==0.4.17) (23.5.26)
-Requirement already satisfied: coloredlogs in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from onnxruntime>=1.14.1->chromadb==0.4.17) (15.0.1)
-Requirement already satisfied: sympy in /databricks/python3/lib/python3.10/site-packages (from onnxruntime>=1.14.1->chromadb==0.4.17) (1.11.1)
-Requirement already satisfied: protobuf in /databricks/python3/lib/python3.10/site-packages (from onnxruntime>=1.14.1->chromadb==0.4.17) (4.24.0)
-Requirement already satisfied: deprecated>=1.2.6 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from opentelemetry-api>=1.2.0->chromadb==0.4.17) (1.2.14)
-Requirement already satisfied: importlib-metadata<7.0,>=6.0 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from opentelemetry-api>=1.2.0->chromadb==0.4.17) (6.11.0)
-Requirement already satisfied: backoff<3.0.0,>=1.10.0 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.17) (2.2.1)
-Requirement already satisfied: opentelemetry-proto==1.22.0 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.17) (1.22.0)
-Requirement already satisfied: googleapis-common-protos~=1.52 in /databricks/python3/lib/python3.10/site-packages (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.17) (1.62.0)
-Requirement already satisfied: opentelemetry-exporter-otlp-proto-common==1.22.0 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.17) (1.22.0)
-Requirement already satisfied: opentelemetry-semantic-conventions==0.43b0 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from opentelemetry-sdk>=1.2.0->chromadb==0.4.17) (0.43b0)
-Requirement already satisfied: monotonic>=1.5 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from posthog>=2.4.0->chromadb==0.4.17) (1.6)
-Requirement already satisfied: charset-normalizer<3,>=2 in /databricks/python3/lib/python3.10/site-packages (from requests<3,>=2->langchain==0.0.344) (2.0.4)
-Requirement already satisfied: greenlet!=0.4.17 in /databricks/python3/lib/python3.10/site-packages (from SQLAlchemy<3,>=1.4->langchain==0.0.344) (2.0.1)
-Requirement already satisfied: networkx in /databricks/python3/lib/python3.10/site-packages (from torch>=1.10.0->accelerate==0.24.1) (2.8.4)
-Requirement already satisfied: triton==2.0.0 in /databricks/python3/lib/python3.10/site-packages (from torch>=1.10.0->accelerate==0.24.1) (2.0.0)
-Requirement already satisfied: jinja2 in /databricks/python3/lib/python3.10/site-packages (from torch>=1.10.0->accelerate==0.24.1) (3.1.2)
-Requirement already satisfied: lit in /databricks/python3/lib/python3.10/site-packages (from triton==2.0.0->torch>=1.10.0->accelerate==0.24.1) (17.0.6)
-Requirement already satisfied: cmake in /databricks/python3/lib/python3.10/site-packages (from triton==2.0.0->torch>=1.10.0->accelerate==0.24.1) (3.28.1)
-Requirement already satisfied: click<9.0.0,>=7.1.1 in /databricks/python3/lib/python3.10/site-packages (from typer>=0.9.0->chromadb==0.4.17) (8.0.4)
-Requirement already satisfied: h11>=0.8 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from uvicorn[standard]>=0.18.3->chromadb==0.4.17) (0.14.0)
-Requirement already satisfied: websockets>=10.4 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from uvicorn[standard]>=0.18.3->chromadb==0.4.17) (12.0)
-Requirement already satisfied: uvloop!=0.15.0,!=0.15.1,>=0.14.0 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from uvicorn[standard]>=0.18.3->chromadb==0.4.17) (0.19.0)
-Requirement already satisfied: watchfiles>=0.13 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from uvicorn[standard]>=0.18.3->chromadb==0.4.17) (0.21.0)
-Requirement already satisfied: httptools>=0.5.0 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from uvicorn[standard]>=0.18.3->chromadb==0.4.17) (0.6.1)
-Requirement already satisfied: python-dotenv>=0.13 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from uvicorn[standard]>=0.18.3->chromadb==0.4.17) (1.0.1)
-Requirement already satisfied: wrapt<2,>=1.10 in /databricks/python3/lib/python3.10/site-packages (from deprecated>=1.2.6->opentelemetry-api>=1.2.0->chromadb==0.4.17) (1.14.1)
-Requirement already satisfied: rsa<5,>=3.1.4 in /databricks/python3/lib/python3.10/site-packages (from google-auth>=1.0.1->kubernetes>=28.1.0->chromadb==0.4.17) (4.9)
-Requirement already satisfied: cachetools<6.0,>=2.0.0 in /databricks/python3/lib/python3.10/site-packages (from google-auth>=1.0.1->kubernetes>=28.1.0->chromadb==0.4.17) (5.3.2)
-Requirement already satisfied: pyasn1-modules>=0.2.1 in /databricks/python3/lib/python3.10/site-packages (from google-auth>=1.0.1->kubernetes>=28.1.0->chromadb==0.4.17) (0.2.8)
-Requirement already satisfied: zipp>=0.5 in /databricks/python3/lib/python3.10/site-packages (from importlib-metadata<7.0,>=6.0->opentelemetry-api>=1.2.0->chromadb==0.4.17) (3.11.0)
-Requirement already satisfied: mypy-extensions>=0.3.0 in /databricks/python3/lib/python3.10/site-packages (from typing-inspect<1,>=0.4.0->dataclasses-json<0.7,>=0.5.7->langchain==0.0.344) (0.4.3)
-Requirement already satisfied: humanfriendly>=9.1 in /local_disk0/.ephemeral_nfs/envs/pythonEnv-3d4bac65-ee40-440a-b31a-d3ec7df11d35/lib/python3.10/site-packages (from coloredlogs->onnxruntime>=1.14.1->chromadb==0.4.17) (10.0)
-Requirement already satisfied: MarkupSafe>=2.0 in /databricks/python3/lib/python3.10/site-packages (from jinja2->torch>=1.10.0->accelerate==0.24.1) (2.1.1)
-Requirement already satisfied: mpmath>=0.19 in /databricks/python3/lib/python3.10/site-packages (from sympy->onnxruntime>=1.14.1->chromadb==0.4.17) (1.2.1)
-Requirement already satisfied: pyasn1<0.5.0,>=0.4.6 in /databricks/python3/lib/python3.10/site-packages (from pyasn1-modules>=0.2.1->google-auth>=1.0.1->kubernetes>=28.1.0->chromadb==0.4.17) (0.4.8)
+Requirement already satisfied: python-dateutil>=2.5.3 in /databricks/python3/lib/python3.11/site-packages (from kubernetes>=28.1.0->chromadb==0.4.17) (2.8.2)
+Requirement already satisfied: google-auth>=1.0.1 in /databricks/python3/lib/python3.11/site-packages (from kubernetes>=28.1.0->chromadb==0.4.17) (2.21.0)
+Requirement already satisfied: websocket-client!=0.40.0,!=0.41.*,!=0.42.*,>=0.32.0 in /databricks/python3/lib/python3.11/site-packages (from kubernetes>=28.1.0->chromadb==0.4.17) (0.58.0)
+Requirement already satisfied: requests-oauthlib in /databricks/python3/lib/python3.11/site-packages (from kubernetes>=28.1.0->chromadb==0.4.17) (1.3.1)
+Collecting oauthlib>=3.2.2 (from kubernetes>=28.1.0->chromadb==0.4.17)
+  Downloading oauthlib-3.2.2-py3-none-any.whl.metadata (7.5 kB)
+Requirement already satisfied: urllib3>=1.24.2 in /databricks/python3/lib/python3.11/site-packages (from kubernetes>=28.1.0->chromadb==0.4.17) (1.26.16)
+Collecting coloredlogs (from onnxruntime>=1.14.1->chromadb==0.4.17)
+  Downloading coloredlogs-15.0.1-py2.py3-none-any.whl.metadata (12 kB)
+Requirement already satisfied: flatbuffers in /databricks/python3/lib/python3.11/site-packages (from onnxruntime>=1.14.1->chromadb==0.4.17) (24.3.7)
+Collecting numpy<2,>=1 (from langchain==0.0.344)
+  Downloading numpy-1.26.4-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)
+[?25l     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/61.0 kB[0m [31m?[0m eta [36m-:--:--[0m[2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m61.0/61.0 kB[0m [31m10.1 MB/s[0m eta [36m0:00:00[0m
+[?25hRequirement already satisfied: protobuf in /databricks/python3/lib/python3.11/site-packages (from onnxruntime>=1.14.1->chromadb==0.4.17) (4.24.1)
+Requirement already satisfied: sympy in /databricks/python3/lib/python3.11/site-packages (from onnxruntime>=1.14.1->chromadb==0.4.17) (1.11.1)
+Collecting deprecated>=1.2.6 (from opentelemetry-api>=1.2.0->chromadb==0.4.17)
+  Downloading Deprecated-1.2.14-py2.py3-none-any.whl.metadata (5.4 kB)
+Requirement already satisfied: importlib-metadata<=7.0,>=6.0 in /databricks/python3/lib/python3.11/site-packages (from opentelemetry-api>=1.2.0->chromadb==0.4.17) (6.0.0)
+Requirement already satisfied: googleapis-common-protos~=1.52 in /databricks/python3/lib/python3.11/site-packages (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.17) (1.63.0)
+Collecting opentelemetry-exporter-otlp-proto-common==1.24.0 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.17)
+  Downloading opentelemetry_exporter_otlp_proto_common-1.24.0-py3-none-any.whl.metadata (1.7 kB)
+Collecting opentelemetry-proto==1.24.0 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.17)
+  Downloading opentelemetry_proto-1.24.0-py3-none-any.whl.metadata (2.2 kB)
+Collecting opentelemetry-semantic-conventions==0.45b0 (from opentelemetry-sdk>=1.2.0->chromadb==0.4.17)
+  Downloading opentelemetry_semantic_conventions-0.45b0-py3-none-any.whl.metadata (2.2 kB)
+Collecting monotonic>=1.5 (from posthog>=2.4.0->chromadb==0.4.17)
+  Downloading monotonic-1.6-py2.py3-none-any.whl.metadata (1.5 kB)
+Collecting backoff>=1.10.0 (from posthog>=2.4.0->chromadb==0.4.17)
+  Downloading backoff-2.2.1-py3-none-any.whl.metadata (14 kB)
+Requirement already satisfied: greenlet!=0.4.17 in /databricks/python3/lib/python3.11/site-packages (from SQLAlchemy<3,>=1.4->langchain==0.0.344) (2.0.1)
+Collecting huggingface-hub
+  Downloading huggingface_hub-0.17.3-py3-none-any.whl.metadata (13 kB)
+Requirement already satisfied: networkx in /databricks/python3/lib/python3.11/site-packages (from torch>=1.10.0->accelerate==0.24.1) (3.1)
+Requirement already satisfied: jinja2 in /databricks/python3/lib/python3.11/site-packages (from torch>=1.10.0->accelerate==0.24.1) (3.1.2)
+Requirement already satisfied: triton==2.1.0 in /databricks/python3/lib/python3.11/site-packages (from torch>=1.10.0->accelerate==0.24.1) (2.1.0)
+Requirement already satisfied: click<9.0.0,>=7.1.1 in /databricks/python3/lib/python3.11/site-packages (from typer>=0.9.0->chromadb==0.4.17) (8.0.4)
+Requirement already satisfied: h11>=0.8 in /databricks/python3/lib/python3.11/site-packages (from uvicorn>=0.18.3->uvicorn[standard]>=0.18.3->chromadb==0.4.17) (0.14.0)
+Collecting httptools>=0.5.0 (from uvicorn[standard]>=0.18.3->chromadb==0.4.17)
+  Downloading httptools-0.6.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.6 kB)
+Collecting python-dotenv>=0.13 (from uvicorn[standard]>=0.18.3->chromadb==0.4.17)
+  Downloading python_dotenv-1.0.1-py3-none-any.whl.metadata (23 kB)
+Collecting uvloop!=0.15.0,!=0.15.1,>=0.14.0 (from uvicorn[standard]>=0.18.3->chromadb==0.4.17)
+  Downloading uvloop-0.19.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+Collecting watchfiles>=0.13 (from uvicorn[standard]>=0.18.3->chromadb==0.4.17)
+  Downloading watchfiles-0.21.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+Collecting websockets>=10.4 (from uvicorn[standard]>=0.18.3->chromadb==0.4.17)
+  Downloading websockets-12.0-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+Requirement already satisfied: wrapt<2,>=1.10 in /databricks/python3/lib/python3.11/site-packages (from deprecated>=1.2.6->opentelemetry-api>=1.2.0->chromadb==0.4.17) (1.14.1)
+Requirement already satisfied: cachetools<6.0,>=2.0.0 in /databricks/python3/lib/python3.11/site-packages (from google-auth>=1.0.1->kubernetes>=28.1.0->chromadb==0.4.17) (5.3.3)
+Requirement already satisfied: pyasn1-modules>=0.2.1 in /databricks/python3/lib/python3.11/site-packages (from google-auth>=1.0.1->kubernetes>=28.1.0->chromadb==0.4.17) (0.2.8)
+Requirement already satisfied: rsa<5,>=3.1.4 in /databricks/python3/lib/python3.11/site-packages (from google-auth>=1.0.1->kubernetes>=28.1.0->chromadb==0.4.17) (4.9)
+Requirement already satisfied: zipp>=0.5 in /databricks/python3/lib/python3.11/site-packages (from importlib-metadata<=7.0,>=6.0->opentelemetry-api>=1.2.0->chromadb==0.4.17) (3.11.0)
+Requirement already satisfied: mypy-extensions>=0.3.0 in /databricks/python3/lib/python3.11/site-packages (from typing-inspect<1,>=0.4.0->dataclasses-json<0.7,>=0.5.7->langchain==0.0.344) (0.4.3)
+Collecting humanfriendly>=9.1 (from coloredlogs->onnxruntime>=1.14.1->chromadb==0.4.17)
+  Downloading humanfriendly-10.0-py2.py3-none-any.whl.metadata (9.2 kB)
+Requirement already satisfied: MarkupSafe>=2.0 in /databricks/python3/lib/python3.11/site-packages (from jinja2->torch>=1.10.0->accelerate==0.24.1) (2.1.1)
+Requirement already satisfied: mpmath>=0.19 in /databricks/python3/lib/python3.11/site-packages (from sympy->onnxruntime>=1.14.1->chromadb==0.4.17) (1.3.0)
+Requirement already satisfied: pyasn1<0.5.0,>=0.4.6 in /databricks/python3/lib/python3.11/site-packages (from pyasn1-modules>=0.2.1->google-auth>=1.0.1->kubernetes>=28.1.0->chromadb==0.4.17) (0.4.8)
+Downloading lxml-4.9.3-cp311-cp311-manylinux_2_28_x86_64.whl (7.9 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/7.9 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [91m━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m1.9/7.9 MB[0m [31m59.6 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m7.9/7.9 MB[0m [31m113.4 MB/s[0m eta [36m0:00:01[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m7.9/7.9 MB[0m [31m78.4 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading langchain-0.0.344-py3-none-any.whl (1.9 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/1.9 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m1.9/1.9 MB[0m [31m94.7 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading transformers-4.35.1-py3-none-any.whl (7.9 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/7.9 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━[0m [32m5.1/7.9 MB[0m [31m152.2 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m7.9/7.9 MB[0m [31m150.2 MB/s[0m eta [36m0:00:01[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m7.9/7.9 MB[0m [31m96.9 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading accelerate-0.24.1-py3-none-any.whl (261 kB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/261.4 kB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m261.4/261.4 kB[0m [31m35.5 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading chromadb-0.4.17-py3-none-any.whl (496 kB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/496.8 kB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m496.8/496.8 kB[0m [31m53.7 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading chroma_hnswlib-0.7.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.4 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/2.4 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m2.4/2.4 MB[0m [31m95.5 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading prometheus_client-0.20.0-py3-none-any.whl (54 kB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/54.5 kB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m54.5/54.5 kB[0m [31m8.0 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading bcrypt-4.1.2-cp39-abi3-manylinux_2_28_x86_64.whl (698 kB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/698.9 kB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m698.9/698.9 kB[0m [31m65.6 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading fastapi-0.110.2-py3-none-any.whl (91 kB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/91.9 kB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m91.9/91.9 kB[0m [31m12.3 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading kubernetes-29.0.0-py2.py3-none-any.whl (1.6 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/1.6 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m1.6/1.6 MB[0m [31m96.2 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading langchain_core-0.0.13-py3-none-any.whl (188 kB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/188.2 kB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m188.2/188.2 kB[0m [31m29.3 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading onnxruntime-1.17.3-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.8 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/6.8 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━[0m [32m6.0/6.8 MB[0m [31m180.2 MB/s[0m eta [36m0:00:01[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m6.8/6.8 MB[0m [31m106.7 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading numpy-1.26.4-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.3 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/18.3 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [91m━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m6.3/18.3 MB[0m [31m190.1 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━[0m [32m12.1/18.3 MB[0m [31m167.8 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━[0m [32m17.8/18.3 MB[0m [31m167.5 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m18.2/18.3 MB[0m [31m163.0 MB/s[0m eta [36m0:00:01[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m18.3/18.3 MB[0m [31m83.6 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading opentelemetry_api-1.24.0-py3-none-any.whl (60 kB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/60.1 kB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m60.1/60.1 kB[0m [31m9.1 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading opentelemetry_exporter_otlp_proto_grpc-1.24.0-py3-none-any.whl (18 kB)
+Downloading opentelemetry_exporter_otlp_proto_common-1.24.0-py3-none-any.whl (17 kB)
+Downloading opentelemetry_proto-1.24.0-py3-none-any.whl (50 kB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/50.8 kB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m50.8/50.8 kB[0m [31m8.0 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading opentelemetry_sdk-1.24.0-py3-none-any.whl (106 kB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/106.1 kB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m106.1/106.1 kB[0m [31m16.4 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading opentelemetry_semantic_conventions-0.45b0-py3-none-any.whl (36 kB)
+Downloading overrides-7.7.0-py3-none-any.whl (17 kB)
+Downloading posthog-3.5.0-py2.py3-none-any.whl (41 kB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/41.3 kB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m41.3/41.3 kB[0m [31m6.2 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading pulsar_client-3.5.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.4 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/5.4 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m5.4/5.4 MB[0m [31m188.8 MB/s[0m eta [36m0:00:01[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m5.4/5.4 MB[0m [31m105.1 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading tenacity-8.2.3-py3-none-any.whl (24 kB)
+Downloading tokenizers-0.14.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.8 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/3.8 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m3.8/3.8 MB[0m [31m184.8 MB/s[0m eta [36m0:00:01[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.8/3.8 MB[0m [31m101.8 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading huggingface_hub-0.17.3-py3-none-any.whl (295 kB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/295.0 kB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m295.0/295.0 kB[0m [31m40.7 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading typing_extensions-4.11.0-py3-none-any.whl (34 kB)
+Downloading uvicorn-0.29.0-py3-none-any.whl (60 kB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/60.8 kB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m60.8/60.8 kB[0m [31m7.9 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading backoff-2.2.1-py3-none-any.whl (15 kB)
+Downloading Deprecated-1.2.14-py2.py3-none-any.whl (9.6 kB)
+Downloading httptools-0.6.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (318 kB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/318.5 kB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m318.5/318.5 kB[0m [31m39.2 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading monotonic-1.6-py2.py3-none-any.whl (8.2 kB)
+Downloading oauthlib-3.2.2-py3-none-any.whl (151 kB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/151.7 kB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m151.7/151.7 kB[0m [31m21.6 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading python_dotenv-1.0.1-py3-none-any.whl (19 kB)
+Downloading starlette-0.37.2-py3-none-any.whl (71 kB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/71.9 kB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m71.9/71.9 kB[0m [31m12.2 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading uvloop-0.19.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.5 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/3.5 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m3.5/3.5 MB[0m [31m176.5 MB/s[0m eta [36m0:00:01[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.5/3.5 MB[0m [31m97.2 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading watchfiles-0.21.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.3 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/1.3 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m1.3/1.3 MB[0m [31m82.5 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading websockets-12.0-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (130 kB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/130.9 kB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m130.9/130.9 kB[0m [31m20.7 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading coloredlogs-15.0.1-py2.py3-none-any.whl (46 kB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/46.0 kB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m46.0/46.0 kB[0m [31m6.7 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading humanfriendly-10.0-py2.py3-none-any.whl (86 kB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/86.8 kB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m86.8/86.8 kB[0m [31m12.2 MB/s[0m eta [36m0:00:00[0m
+[?25hBuilding wheels for collected packages: pypika
+  Building wheel for pypika (pyproject.toml): started
+  Building wheel for pypika (pyproject.toml): finished with status 'done'
+  Created wheel for pypika: filename=PyPika-0.48.9-py2.py3-none-any.whl size=53723 sha256=7e960ba8f7b596348826bae0ba7f842a1c27b6ade58fa0421d43470302648080
+  Stored in directory: /root/.cache/pip/wheels/a3/01/bd/4c40ceb9d5354160cb186dcc153360f4ab7eb23e2b24daf96d
+Successfully built pypika
+Installing collected packages: pypika, monotonic, websockets, uvloop, uvicorn, typing-extensions, tenacity, python-dotenv, pulsar-client, prometheus-client, overrides, opentelemetry-semantic-conventions, opentelemetry-proto, oauthlib, numpy, lxml, humanfriendly, httptools, deprecated, bcrypt, backoff, watchfiles, starlette, posthog, opentelemetry-exporter-otlp-proto-common, opentelemetry-api, huggingface-hub, coloredlogs, chroma-hnswlib, tokenizers, opentelemetry-sdk, onnxruntime, kubernetes, fastapi, accelerate, transformers, opentelemetry-exporter-otlp-proto-grpc, langchain-core, langchain, chromadb
+  Attempting uninstall: typing-extensions
+    Found existing installation: typing_extensions 4.7.1
+    Not uninstalling typing-extensions at /databricks/python3/lib/python3.11/site-packages, outside environment /local_disk0/.ephemeral_nfs/envs/pythonEnv-5b10950c-b05b-41f8-9442-ddb8c723f0ee
+    Can't uninstall 'typing_extensions'. No files were found to uninstall.
+  Attempting uninstall: tenacity
+    Found existing installation: tenacity 8.2.2
+    Not uninstalling tenacity at /databricks/python3/lib/python3.11/site-packages, outside environment /local_disk0/.ephemeral_nfs/envs/pythonEnv-5b10950c-b05b-41f8-9442-ddb8c723f0ee
+    Can't uninstall 'tenacity'. No files were found to uninstall.
+  Attempting uninstall: prometheus-client
+    Found existing installation: prometheus-client 0.14.1
+    Not uninstalling prometheus-client at /databricks/python3/lib/python3.11/site-packages, outside environment /local_disk0/.ephemeral_nfs/envs/pythonEnv-5b10950c-b05b-41f8-9442-ddb8c723f0ee
+    Can't uninstall 'prometheus-client'. No files were found to uninstall.
+  Attempting uninstall: oauthlib
+    Found existing installation: oauthlib 3.2.0
+    Not uninstalling oauthlib at /usr/lib/python3/dist-packages, outside environment /local_disk0/.ephemeral_nfs/envs/pythonEnv-5b10950c-b05b-41f8-9442-ddb8c723f0ee
+    Can't uninstall 'oauthlib'. No files were found to uninstall.
+  Attempting uninstall: numpy
+    Found existing installation: numpy 1.23.5
+    Not uninstalling numpy at /databricks/python3/lib/python3.11/site-packages, outside environment /local_disk0/.ephemeral_nfs/envs/pythonEnv-5b10950c-b05b-41f8-9442-ddb8c723f0ee
+    Can't uninstall 'numpy'. No files were found to uninstall.
+  Attempting uninstall: lxml
+    Found existing installation: lxml 4.9.2
+    Not uninstalling lxml at /databricks/python3/lib/python3.11/site-packages, outside environment /local_disk0/.ephemeral_nfs/envs/pythonEnv-5b10950c-b05b-41f8-9442-ddb8c723f0ee
+    Can't uninstall 'lxml'. No files were found to uninstall.
+  Attempting uninstall: bcrypt
+    Found existing installation: bcrypt 3.2.0
+    Not uninstalling bcrypt at /databricks/python3/lib/python3.11/site-packages, outside environment /local_disk0/.ephemeral_nfs/envs/pythonEnv-5b10950c-b05b-41f8-9442-ddb8c723f0ee
+    Can't uninstall 'bcrypt'. No files were found to uninstall.
+  Attempting uninstall: huggingface-hub
+    Found existing installation: huggingface-hub 0.20.2
+    Not uninstalling huggingface-hub at /databricks/python3/lib/python3.11/site-packages, outside environment /local_disk0/.ephemeral_nfs/envs/pythonEnv-5b10950c-b05b-41f8-9442-ddb8c723f0ee
+    Can't uninstall 'huggingface-hub'. No files were found to uninstall.
+  Attempting uninstall: tokenizers
+    Found existing installation: tokenizers 0.15.0
+    Not uninstalling tokenizers at /databricks/python3/lib/python3.11/site-packages, outside environment /local_disk0/.ephemeral_nfs/envs/pythonEnv-5b10950c-b05b-41f8-9442-ddb8c723f0ee
+    Can't uninstall 'tokenizers'. No files were found to uninstall.
+  Attempting uninstall: accelerate
+    Found existing installation: accelerate 0.25.0
+    Not uninstalling accelerate at /databricks/python3/lib/python3.11/site-packages, outside environment /local_disk0/.ephemeral_nfs/envs/pythonEnv-5b10950c-b05b-41f8-9442-ddb8c723f0ee
+    Can't uninstall 'accelerate'. No files were found to uninstall.
+  Attempting uninstall: transformers
+    Found existing installation: transformers 4.36.2
+    Not uninstalling transformers at /databricks/python3/lib/python3.11/site-packages, outside environment /local_disk0/.ephemeral_nfs/envs/pythonEnv-5b10950c-b05b-41f8-9442-ddb8c723f0ee
+    Can't uninstall 'transformers'. No files were found to uninstall.
+  Attempting uninstall: langchain-core
+    Found existing installation: langchain-core 0.1.23
+    Not uninstalling langchain-core at /databricks/python3/lib/python3.11/site-packages, outside environment /local_disk0/.ephemeral_nfs/envs/pythonEnv-5b10950c-b05b-41f8-9442-ddb8c723f0ee
+    Can't uninstall 'langchain-core'. No files were found to uninstall.
+  Attempting uninstall: langchain
+    Found existing installation: langchain 0.1.3
+    Not uninstalling langchain at /databricks/python3/lib/python3.11/site-packages, outside environment /local_disk0/.ephemeral_nfs/envs/pythonEnv-5b10950c-b05b-41f8-9442-ddb8c723f0ee
+    Can't uninstall 'langchain'. No files were found to uninstall.
+Successfully installed accelerate-0.24.1 backoff-2.2.1 bcrypt-4.1.2 chroma-hnswlib-0.7.3 chromadb-0.4.17 coloredlogs-15.0.1 deprecated-1.2.14 fastapi-0.110.2 httptools-0.6.1 huggingface-hub-0.17.3 humanfriendly-10.0 kubernetes-29.0.0 langchain-0.0.344 langchain-core-0.0.13 lxml-4.9.3 monotonic-1.6 numpy-1.26.4 oauthlib-3.2.2 onnxruntime-1.17.3 opentelemetry-api-1.24.0 opentelemetry-exporter-otlp-proto-common-1.24.0 opentelemetry-exporter-otlp-proto-grpc-1.24.0 opentelemetry-proto-1.24.0 opentelemetry-sdk-1.24.0 opentelemetry-semantic-conventions-0.45b0 overrides-7.7.0 posthog-3.5.0 prometheus-client-0.20.0 pulsar-client-3.5.0 pypika-0.48.9 python-dotenv-1.0.1 starlette-0.37.2 tenacity-8.2.3 tokenizers-0.14.1 transformers-4.35.1 typing-extensions-4.11.0 uvicorn-0.29.0 uvloop-0.19.0 watchfiles-0.21.0 websockets-12.0

@@ -66,9 +66,19 @@ llama_model = ChatDatabricks(endpoint="databricks-llama-2-70b-chat", max_tokens 
 
 # COMMAND ----------
 
-# DBTITLE 1,Start with a Simple Question about Spark Joins
 user_question = "How can I speed up my Spark join operation?"
 llama_model.predict(user_question)
+
+# COMMAND ----------
+
+#call Provisional Throughput and openAI
+llama_model_pt = ChatDatabricks(endpoint="llama_2_models_anya", max_tokens = 400)
+openai_model = ChatDatabricks(endpoint="openai-chat-endpoint", max_tokens = 400)
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC Creating Prompt templates
 
 # COMMAND ----------
 

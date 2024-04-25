@@ -37,7 +37,7 @@ dbutils.library.restartPython()
 
 # Get catalog name to use for the model from the marketplace
 current_user = spark.sql("SELECT current_user() as username").collect()[0].username
-catalog_name = f'catalog_whisper_{current_user.split("@")[0].split(".")[0]}'
+catalog_name = "databricks_whisper_v3_model"
 dbutils.widgets.text("catalog_name",catalog_name)
 
 # COMMAND ----------
@@ -60,7 +60,11 @@ dbutils.widgets.dropdown("model_name", model_names[0], model_names)
 version = "1"
 model_name = dbutils.widgets.get("model_name")
 model_uc_path = f"{catalog_name}.models.{model_name}"
-endpoint_name = f'{model_name}_marketplace_{current_user.split("@")[0].split(".")[0]}'
+endpoint_name = "databricks_whisper_v3_model_anya"
+
+# COMMAND ----------
+
+display(endpoint_name)
 
 # COMMAND ----------
 
@@ -120,6 +124,10 @@ config = EndpointCoreConfigInput.from_dict({
 })
 model_details = w.serving_endpoints.create(name=endpoint_name, config=config)
 model_details.result(timeout=datetime.timedelta(minutes=30))
+
+# COMMAND ----------
+
+
 
 # COMMAND ----------
 
